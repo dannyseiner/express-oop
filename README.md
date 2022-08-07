@@ -1,2 +1,2 @@
-# Express.js - Babel Boilerplate - oop style
-> git@github.com:vmasto/express-babel.git
+# OOP API
+> made from: git@github.com:vmasto/express-babel.git
