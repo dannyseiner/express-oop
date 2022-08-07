@@ -1,2 +1,2 @@
-# express-oop
-Mysql Express OOP API 
+# Express.js - Babel Boilerplate - oop style
+> git@github.com:vmasto/express-babel.git
