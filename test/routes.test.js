@@ -7,10 +7,10 @@ describe('GET /', () => {
   });
 });
 
-describe('GET /list', () => {
+describe('GET /users', () => {
   it('should render properly with valid parameters', async () => {
     await request(app)
-      .get('/list')
+      .get('/users')
       .query({ title: 'List title' })
       .expect(200);
   });

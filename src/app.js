@@ -20,9 +20,16 @@ class App {
     app.use(bodyParser.urlencoded({ extended: false }));
 
     this.setRoutes();
-    this.errorHandling();
+    //this.errorHandling(); -> view engine error handler
 
-    app.listen(port, () => console.log(`Listening on port ${port}`)); // eslint-disable-line
+    app.listen(port, () => {
+      console.log("---------- SERVER ----------")
+      console.log("STATUS:", '\x1b[36mrunning\x1b[0m')
+      console.log(`PORT:`, `\x1b[36m${port}\x1b[0m`)
+      console.log(`\x1b[36mhttp://localhost:${port}\x1b[0m`)
+      console.log("--------- ACTIVITY ----------")
+
+    }); // eslint-disable-line
   }
 
   setRoutes() {

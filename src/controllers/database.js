@@ -14,15 +14,15 @@ class DB {
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
             password: process.env.DB_PWD,
-            database: process.env.DB_DATABASE
+            database: process.env.DB_DATABASE,
+            socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", //optional for macos
         });
 
         this.establishedConnection.connect(function (err) {
             if (err) {
-                console.log("DATABASE STATUS:", "\x1b[31mFAILED");
+                console.log("DB:", "\x1b[31mFAILED");
                 throw err
             };
-            console.log("DATABASE STATUS:", '\x1b[36mACTIVE\x1b[0m');
         });
     }
 
