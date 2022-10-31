@@ -1,11 +1,15 @@
 import { Router } from 'express';
 import { Main, PostTest } from './controllers/main';
-import { getAllUsers, getUserName } from "./controllers/user"
+import { getPosts } from "./controllers/posts"
 const routes = Router();
+const socketRoutes = []
 
 routes.get('/', Main);
-routes.get('/users', getAllUsers)
+routes.get('/posts', getPosts)
 routes.post('/test', PostTest)
-routes.get('/:username', getUserName)
+
+socketRoutes.push('/posts', (socket) => {
+    console.log(client)
+})
 
 export default routes;

@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.load();
 
 // Set port
-const { PORT = 3010 } = process.env;
+const { PORT = 3010, socketport = 3011 } = process.env;
 
 // express listen to port
-new App(PORT);
+new App(PORT, socketport);

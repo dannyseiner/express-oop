@@ -45,7 +45,8 @@
     "mysql": "^2.18.1",
     "pug": "^2.0.0-beta11",
     "redis": "^2.8.0",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "socket.io": "^4.5.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
