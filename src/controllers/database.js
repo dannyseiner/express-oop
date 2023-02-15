@@ -10,13 +10,16 @@ class DB {
     }
 
     connection() {
-        this.establishedConnection = mysql.createConnection({
+        const conn = {
             host: process.env.DB_HOST,
             user: process.env.DB_USER,
-            password: process.env.DB_PWD,
-            database: process.env.DB_DATABASE,
-            socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock", //optional for macos
-        });
+            password: process.env.DB_PSD,
+            database: process.env.DB_PASSWORD,
+        }
+        if (process.env.DB_USE_SOCKET_PATH === "true") {
+            conn.socketPath = "/Applications/MAMP/tmp/mysql/mysql.sock"
+        }
+        this.establishedConnection = mysql.createConnection(conn);
 
         this.establishedConnection.connect(function (err) {
             if (err) {
@@ -34,7 +37,6 @@ class DB {
     }
 }
 
-// const db = new DB()
-const db = {}
+const db = new DB()
 
 export default db

@@ -17,5 +17,3 @@ export const PostTest = function (req, res) {
         params: req.body
     })
 }
-
-
