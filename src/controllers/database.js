@@ -34,6 +34,7 @@ class DB {
     }
 }
 
-const db = new DB()
+// const db = new DB()
+const db = {}
 
 export default db
