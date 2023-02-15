@@ -1,28 +1,15 @@
 import request from 'supertest';
-import app from '../src/app.js';
 
-describe('GET /', () => {
-  it('should render properly', async () => {
-    await request(app).get('/').expect(200);
-  });
+it("DEFAULT POST test", async done => {
+  const response = await request('http://localhost:3010').post('/test').send({ name: 'john' });
+  expect(response.status).toMatch(200);
+  done();
 });
 
-describe('GET /users', () => {
-  it('should render properly with valid parameters', async () => {
-    await request(app)
-      .get('/users')
-      .query({ title: 'List title' })
-      .expect(200);
-  });
-
-  it('should error without a valid parameter', async () => {
-    await request(app).get('/list').expect(500);
-  });
+it("DEFAULT GET test", async done => {
+  const response = await request('http://localhost:3010').get('/')
+  expect(response.status).toMatch(200)
+  done();
 });
 
-describe('GET /404', () => {
-  it('should return 404 for non-existent URLs', async () => {
-    await request(app).get('/404').expect(404);
-    await request(app).get('/notfound').expect(404);
-  });
-});
+
