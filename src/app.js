@@ -32,18 +32,15 @@ class App {
   }
 
   setRoutes() {
-    // Routes
     this.expressApp.use('/', routes);
   }
 
   errorHandling() {
-    // Catch 404 and forward to error handler
     this.expressApp.use((req, res, next) => {
       const err = new Error('Not Found');
       err.status = 404;
       next(err);
     });
-    // Error handler
     this.expressApp.use((err, req, res, next) => {
       res
         .status(err.status || 500)
